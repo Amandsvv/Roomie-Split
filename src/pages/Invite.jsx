@@ -11,7 +11,7 @@ export default function Invites() {
   const respondInvite = async (notificationId, groupId, status) => {
     try {
       setLoading(true);
-      await api.post(`/groups/${groupId}/respond`, { status });
+      await api.post(`/groups/${groupId}/respond/${notificationId}`, { status });
 
       // ✅ remove from context after responding
       removeNotification(notificationId);
